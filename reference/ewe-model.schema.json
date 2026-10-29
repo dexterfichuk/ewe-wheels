@@ -1,0 +1,886 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ecopath.org/schema/ewe-model/v1.json",
+  "title": "EwE model document",
+  "description": "The Ecopath part of an Ecopath with Ecosim model. Numbers use null for \u0027not entered\u0027 (to be estimated). Groups, fleets and stanzas are referred to by name.",
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "ewe-model"
+    },
+    "version": {
+      "const": 1
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Model name.",
+          "type": "string"
+        },
+        "description": {
+          "description": "Free text description.",
+          "type": "string"
+        },
+        "author": {
+          "description": "Author.",
+          "type": "string"
+        },
+        "contact": {
+          "description": "Contact details.",
+          "type": "string"
+        },
+        "area": {
+          "description": "Model area (km\u00B2).",
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "num_digits": {
+          "description": "Decimal digits shown by the EwE interface.",
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "unit_currency": {
+          "description": "Currency unit (EwE eUnitCurrencyType: 0 nutrient, 1 energy, 2 carbon, 5 wet weight, 6 dry weight, 7 custom).",
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "unit_currency_custom": {
+          "description": "Custom currency unit label.",
+          "type": "string"
+        },
+        "unit_time": {
+          "description": "Time unit (EwE eUnitTimeType: 0 day, 1 year, 2 custom).",
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "unit_time_custom": {
+          "description": "Custom time unit label.",
+          "type": "string"
+        },
+        "unit_monetary": {
+          "description": "Monetary unit, e.g. EUR.",
+          "type": "string"
+        },
+        "first_year": {
+          "description": "First year of the model (Ecosim time 0).",
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "num_years": {
+          "description": "Number of years covered by time series.",
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "country": {
+          "description": "Country.",
+          "type": "string"
+        },
+        "ecosystem_type": {
+          "description": "Ecosystem type.",
+          "type": "string"
+        },
+        "min_lon": {
+          "description": "Western bound (decimal degrees).",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "max_lon": {
+          "description": "Eastern bound (decimal degrees).",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "min_lat": {
+          "description": "Southern bound (decimal degrees).",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "max_lat": {
+          "description": "Northern bound (decimal degrees).",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "code_ecobase": {
+          "description": "EcoBase model code.",
+          "type": "string"
+        },
+        "publication_doi": {
+          "description": "Publication DOI.",
+          "type": "string"
+        },
+        "publication_uri": {
+          "description": "Publication URI.",
+          "type": "string"
+        },
+        "publication_ref": {
+          "description": "Publication reference.",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Unique group name.",
+            "type": "string"
+          },
+          "pp": {
+            "description": "0 consumer, 1 primary producer, between 0 and 1 partial producer, 2 detritus.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 2
+          },
+          "habitat_area": {
+            "description": "Fraction of the model area the group occupies (0-1].",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "biomass_area": {
+            "description": "Biomass in habitat area (t/km\u00B2). null = estimate.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "pb": {
+            "description": "Production / biomass (/year). null = estimate.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "qb": {
+            "description": "Consumption / biomass (/year). null = estimate or not applicable.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "ee": {
+            "description": "Ecotrophic efficiency. null = estimate.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "ge": {
+            "description": "Production / consumption. null = estimate.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "other_mortality": {
+            "description": "Other mortality rate (/year). null = estimate.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "ba": {
+            "description": "Biomass accumulation (t/km\u00B2/year).",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "ba_rate": {
+            "description": "Biomass accumulation rate (/year).",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "unassimilated": {
+            "description": "Unassimilated fraction of consumption.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "detritus_import": {
+            "description": "Detritus import (t/km\u00B2/year), detritus groups only.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "export": {
+            "description": "Export (t/km\u00B2/year).",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "immigration": {
+            "description": "Immigration (t/km\u00B2/year).",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "emigration": {
+            "description": "Emigration (t/km\u00B2/year).",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "emigration_rate": {
+            "description": "Emigration rate (/year).",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "diet_import": {
+            "description": "Fraction of the diet imported from outside the system.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "is_fish": {
+            "description": "The group is a fish group.",
+            "type": "boolean"
+          },
+          "is_invert": {
+            "description": "The group is an invertebrate group.",
+            "type": "boolean"
+          },
+          "non_market_value": {
+            "description": "Non-market (existence) value.",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "vbk": {
+            "description": "von Bertalanffy K (/year). Required on multi-stanza groups, the same for every life stage.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "color": {
+            "description": "Display colour as hex AARRGGBB.",
+            "type": "string"
+          },
+          "id": {
+            "type": "integer",
+            "description": "Database ID of an existing row. Keeps the link to Ecosim/Ecospace data on renames; leave out for new rows."
+          }
+        },
+        "required": [
+          "name",
+          "pp"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Functional groups, living groups before detritus."
+    },
+    "diet": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "predator": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name of a group."
+          },
+          "prey": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name of a group."
+          },
+          "proportion": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "predator",
+          "prey",
+          "proportion"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Diet composition: the proportion of each prey in each predator\u0027s diet."
+    },
+    "detritus_fate": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "group": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name of a group."
+          },
+          "detritus": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name of a detritus group."
+          },
+          "proportion": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "group",
+          "detritus",
+          "proportion"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Where each group\u0027s flow to detritus goes."
+    },
+    "fleets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Unique fleet name.",
+            "type": "string"
+          },
+          "nominal_effort": {
+            "description": "Nominal effort.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "fixed_cost": {
+            "description": "Fixed cost (% of value).",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "variable_cost": {
+            "description": "Effort-related cost (% of value).",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "sailing_cost": {
+            "description": "Sailing-related cost (% of value).",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "color": {
+            "description": "Display colour as hex AARRGGBB.",
+            "type": "string"
+          },
+          "id": {
+            "type": "integer",
+            "description": "Database ID of an existing row. Keeps the link to Ecosim/Ecospace data on renames; leave out for new rows."
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Fishing fleets."
+    },
+    "catch": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "landings": {
+            "description": "Landings (t/km\u00B2/year).",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "discards": {
+            "description": "Discards (t/km\u00B2/year).",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "price": {
+            "description": "Market price of landings.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "discard_mortality": {
+            "description": "Fraction of discards that die.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "fleet": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name of a fleet."
+          },
+          "group": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name of a group."
+          }
+        },
+        "required": [
+          "fleet",
+          "group"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Landings and discards by fleet and group."
+    },
+    "discard_fate": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fleet": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name of a fleet."
+          },
+          "detritus": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name of a detritus group."
+          },
+          "proportion": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "fleet",
+          "detritus",
+          "proportion"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Where each fleet\u0027s discards go."
+    },
+    "stanzas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Unique multi-stanza name.",
+            "type": "string"
+          },
+          "rec_power": {
+            "description": "Recruitment power.",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "bab_split": {
+            "description": "Biomass accumulation rate (/year).",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "wmat_winf": {
+            "description": "Weight at maturity / asymptotic weight.",
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "fixed_fecundity": {
+            "description": "Fecundity does not scale with weight.",
+            "type": "boolean"
+          },
+          "egg_at_spawn": {
+            "description": "Eggs are produced at spawning.",
+            "type": "boolean"
+          },
+          "leading_stage": {
+            "description": "1-based life stage whose B is entered; the stanza calculation derives the other stages\u0027 B.",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "leading_cb": {
+            "description": "1-based life stage whose Q/B is entered; the stanza calculation derives the other stages\u0027 Q/B.",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "id": {
+            "type": "integer",
+            "description": "Database ID of an existing row. Keeps the link to Ecosim/Ecospace data on renames; leave out for new rows."
+          },
+          "life_stages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "age_start": {
+                  "description": "Age (months) at which the stage starts.",
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "mortality": {
+                  "description": "Total mortality Z (/year) of the stage, used by the stanza calculation; keep the group\u0027s pb equal to it.",
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "spawn_prop": {
+                  "description": "Fraction of the stage that spawns (1 when left out on a new stage).",
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "group": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Name of a living group."
+                }
+              },
+              "required": [
+                "group"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Life stages in order of age."
+          }
+        },
+        "required": [
+          "name",
+          "life_stages"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Multi-stanza (age-structured) groups."
+    },
+    "ecosim_scenarios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Unique Ecosim scenario name.",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description.",
+            "type": "string"
+          },
+          "author": {
+            "description": "Author.",
+            "type": "string"
+          },
+          "contact": {
+            "description": "Contact details.",
+            "type": "string"
+          },
+          "years": {
+            "description": "Number of years to run.",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "id": {
+            "type": "integer",
+            "description": "Database ID of an existing row. Keeps the link to Ecosim/Ecospace data on renames; leave out for new rows."
+          },
+          "effort": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "fleet": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Name of a fleet."
+                },
+                "values": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "description": "Effort relative to the Ecopath (base) effort, one value per interval from the first year. The last value holds to the end of the run."
+                },
+                "interval": {
+                  "enum": [
+                    "year",
+                    "month"
+                  ],
+                  "description": "What one value covers (default year)."
+                }
+              },
+              "required": [
+                "fleet",
+                "values"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Fishing effort series by fleet; fleets left out keep their stored series."
+          },
+          "vulnerabilities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "predator": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Name of a group."
+                },
+                "prey": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Name of a group."
+                },
+                "vulnerability": {
+                  "type": "number",
+                  "minimum": 1,
+                  "description": "1 donor control, 2 EwE\u0027s default, large values top-down control."
+                }
+              },
+              "required": [
+                "predator",
+                "prey",
+                "vulnerability"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Predator-prey vulnerabilities; links left out keep their stored value."
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Ecosim scenarios. Leave the list out to keep the model\u0027s scenarios as they are; a new scenario starts from EwE\u0027s defaults."
+    },
+    "time_series": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "first_year": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "contact": {
+            "type": "string"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "oneOf": [
+                    {
+                      "enum": [
+                        "biomass_relative",
+                        "biomass_absolute",
+                        "biomass_forcing",
+                        "fishing_effort",
+                        "fishing_mortality",
+                        "total_mortality",
+                        "constant_total_mortality",
+                        "catches",
+                        "catches_forcing",
+                        "catches_relative",
+                        "average_weight",
+                        "discard_proportion",
+                        "discard_mortality",
+                        "landings",
+                        "discards"
+                      ]
+                    },
+                    {
+                      "enum": [
+                        0,
+                        1,
+                        -1,
+                        3,
+                        4,
+                        5,
+                        -5,
+                        6,
+                        -6,
+                        61,
+                        7,
+                        10,
+                        11,
+                        12,
+                        13
+                      ]
+                    }
+                  ],
+                  "description": "What the series holds; fishing_effort is per fleet, landings/discards/discard_* per fleet and group, the rest per group."
+                },
+                "group": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Name of a group."
+                },
+                "fleet": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Name of a fleet."
+                },
+                "values": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "description": "One value per year from the dataset\u0027s first_year; null where there is no observation."
+                },
+                "weight": {
+                  "type": "number",
+                  "minimum": 0,
+                  "description": "Weight in the sum of squares (default 1)."
+                },
+                "cv": {
+                  "type": "number",
+                  "minimum": 0,
+                  "description": "Coefficient of variation."
+                }
+              },
+              "required": [
+                "name",
+                "type",
+                "values"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Annual time series."
+          }
+        },
+        "required": [
+          "name",
+          "first_year",
+          "series"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Time series datasets, to fit Ecosim to or to drive it. A listed dataset replaces the stored one of the same name; others stay."
+    }
+  },
+  "required": [
+    "format",
+    "version",
+    "groups"
+  ],
+  "additionalProperties": false
+}

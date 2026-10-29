@@ -1,0 +1,4772 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Run, build and analyse Ecopath with Ecosim models from Python and R on macOS, Linux and Windows.">
+      
+      
+      
+        <link rel="canonical" href="https://dexterfichuk.github.io/ewe-wheels/r/reference/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../access/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Function reference - ewe — Ecopath with Ecosim for Python and R</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#r-function-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ewe — Ecopath with Ecosim for Python and R" class="md-header__button md-logo" aria-label="ewe — Ecopath with Ecosim for Python and R" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ewe — Ecopath with Ecosim for Python and R
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Function reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dexterfichuk/ewe-wheels" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ewe-wheels
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ewe — Ecopath with Ecosim for Python and R" class="md-nav__button md-logo" aria-label="ewe — Ecopath with Ecosim for Python and R" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ewe — Ecopath with Ecosim for Python and R
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dexterfichuk/ewe-wheels" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ewe-wheels
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models and files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/ecopath-ecosim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecopath and Ecosim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/editing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building and editing models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time series, fitting, Monte Carlo, Ecospace, Ecotracer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Management (MSE, MSY, policy search)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network analysis and indicators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/plotting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plotting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    R
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Function reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Function reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#models-ecopath-and-ecosim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Models, Ecopath and Ecosim
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Models, Ecopath and Ecosim">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_open
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_close" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_close
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_fleets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_scenarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ecopath_inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ecopath_inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ecopath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ecopath
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ecosim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ecosim
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_wide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_wide
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-and-editing-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building and editing models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building and editing models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_new_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_new_model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_read_document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_read_document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_write_document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_write_document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_doc_table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_doc_table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_diet_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_diet_matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_add_group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_add_group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_update_groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_update_groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_rename_group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_rename_group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_remove_group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_remove_group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_diet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_diet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_diet_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_diet_matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_detritus_fate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_detritus_fate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_add_fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_add_fleet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_fleet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_rename_fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_rename_fleet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_remove_fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_remove_fleet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_catch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_catch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_catch_table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_catch_table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_discard_fate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_discard_fate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_add_stanza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_add_stanza
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_remove_stanza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_remove_stanza
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_calculate_stanzas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_calculate_stanzas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_add_ecosim_scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_add_ecosim_scenario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_remove_ecosim_scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_remove_ecosim_scenario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_effort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_effort
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_vulnerabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_add_time_series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_add_time_series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_remove_time_series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_remove_time_series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_validate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_save_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_save_model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_open_document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_open_document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_apply
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_save" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_save
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_model_schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_model_schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-series-fitting-monte-carlo-ecospace-ecotracer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time series, fitting, Monte Carlo, Ecospace, Ecotracer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Time series, fitting, Monte Carlo, Ecospace, Ecotracer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_time_series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_time_series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_fit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_fit_save" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_fit_save
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_fit_apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_fit_apply
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_monte_carlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_monte_carlo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ecotracer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ecotracer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ecospace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ecospace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_mse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_mse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_msy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_msy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_fmsy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_fmsy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_policy_search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_policy_search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_mse_wide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_mse_wide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_yield_curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_yield_curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-analysis-and-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network analysis and indicators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network analysis and indicators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_network_analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_network_analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_mti_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_mti_matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ecosim_network_analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ecosim_network_analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_indicators
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plotting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plotting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plotting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ggtheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ggtheme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_ecosim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_ecosim
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_compare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_fleets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_fit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_time_series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_time_series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_fit_iterations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_fit_iterations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_monte_carlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_monte_carlo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_mse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_mse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_msy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_msy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_fmsy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_fmsy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_ecospace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_ecospace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_ecospace_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_ecospace_map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_trophic_levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_trophic_levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_foodweb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_foodweb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_mti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_mti
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_ecotracer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_ecotracer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model library
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_library_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_library_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_library_ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_library_ids
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_library_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_library_list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_library_load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_library_load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_library_golden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_library_golden
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_annual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_annual
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_find_access_tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_find_access_tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_to_ewemdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_to_ewemdb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_from_ewemdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_from_ewemdb
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engine-bundle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engine bundle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engine bundle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_install_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_install_engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_bundle_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_bundle_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_find_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_find_engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access files (.ewemdb)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engine CLI and protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#models-ecopath-and-ecosim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Models, Ecopath and Ecosim
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Models, Ecopath and Ecosim">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_open
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_close" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_close
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_fleets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_scenarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ecopath_inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ecopath_inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ecopath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ecopath
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ecosim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ecosim
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_wide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_wide
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-and-editing-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building and editing models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building and editing models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_new_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_new_model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_read_document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_read_document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_write_document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_write_document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_doc_table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_doc_table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_diet_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_diet_matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_add_group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_add_group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_update_groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_update_groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_rename_group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_rename_group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_remove_group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_remove_group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_diet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_diet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_diet_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_diet_matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_detritus_fate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_detritus_fate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_add_fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_add_fleet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_fleet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_rename_fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_rename_fleet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_remove_fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_remove_fleet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_catch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_catch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_catch_table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_catch_table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_discard_fate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_discard_fate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_add_stanza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_add_stanza
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_remove_stanza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_remove_stanza
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_calculate_stanzas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_calculate_stanzas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_add_ecosim_scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_add_ecosim_scenario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_remove_ecosim_scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_remove_ecosim_scenario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_effort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_effort
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_set_vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_set_vulnerabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_add_time_series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_add_time_series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_remove_time_series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_remove_time_series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_validate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_save_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_save_model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_open_document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_open_document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_apply
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_save" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_save
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_model_schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_model_schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-series-fitting-monte-carlo-ecospace-ecotracer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time series, fitting, Monte Carlo, Ecospace, Ecotracer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Time series, fitting, Monte Carlo, Ecospace, Ecotracer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_time_series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_time_series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_fit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_fit_save" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_fit_save
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_fit_apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_fit_apply
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_monte_carlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_monte_carlo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ecotracer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ecotracer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ecospace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ecospace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_mse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_mse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_msy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_msy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_fmsy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_fmsy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_policy_search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_policy_search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_mse_wide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_mse_wide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_yield_curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_yield_curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-analysis-and-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network analysis and indicators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network analysis and indicators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_network_analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_network_analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_mti_matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_mti_matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ecosim_network_analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ecosim_network_analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_indicators
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plotting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plotting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plotting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_ggtheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_ggtheme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_ecosim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_ecosim
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_compare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_fleets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_fleets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_fit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_time_series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_time_series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_fit_iterations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_fit_iterations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_monte_carlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_monte_carlo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_mse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_mse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_msy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_msy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_fmsy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_fmsy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_ecospace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_ecospace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_ecospace_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_ecospace_map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_trophic_levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_trophic_levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_foodweb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_foodweb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_mti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_mti
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_plot_ecotracer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_plot_ecotracer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model library
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_library_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_library_root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_library_ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_library_ids
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_library_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_library_list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_library_load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_library_load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_library_golden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_library_golden
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_annual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_annual
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_find_access_tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_find_access_tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_to_ewemdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_to_ewemdb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_from_ewemdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_from_ewemdb
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engine-bundle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engine bundle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engine bundle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_install_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_install_engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe_bundle_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_bundle_dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ewe_find_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ewe_find_engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="r-function-reference">R function reference<a class="headerlink" href="#r-function-reference" title="Permanent link">&para;</a></h1>
+<p>Generated from the package's roxygen comments by <code>docs-site/_tools/gen_r_reference.py</code>. The R functions mirror the Python API (<code>m.ecosim(...)</code> is <code>ewe_ecosim(m, ...)</code>); the Python pages explain the options in more depth.</p>
+<h2 id="models-ecopath-and-ecosim">Models, Ecopath and Ecosim<a class="headerlink" href="#models-ecopath-and-ecosim" title="Permanent link">&para;</a></h2>
+<h3 id="ewe_open"><code>ewe_open</code><a class="headerlink" href="#ewe_open" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Open an EwE model</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>Model file: .eiixml, or an EwE Access database (.ewemdb/.mdb), which is converted to .eiixml first when not on Windows.</td>
+</tr>
+<tr>
+<td><code>engine</code></td>
+<td>Optional path to ewe-engine(.dll).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> An <code>ewe_model</code>. Close it with <code>ewe_close()</code>.</p>
+<h3 id="ewe_close"><code>ewe_close</code><a class="headerlink" href="#ewe_close" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_close</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_info"><code>ewe_info</code><a class="headerlink" href="#ewe_info" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_info</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="n">m</span><span class="o">$</span><span class="n">info</span><span class="p">[</span><span class="o">!</span><span class="nf">vapply</span><span class="p">(</span><span class="n">m</span><span class="o">$</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">is.list</span><span class="p">,</span><span class="w"> </span><span class="nf">logical</span><span class="p">(</span><span class="m">1</span><span class="p">))</span>
+</code></pre></div>
+<p>Model metadata (name, sizes, first year, ...)</p>
+<h3 id="ewe_groups"><code>ewe_groups</code><a class="headerlink" href="#ewe_groups" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_groups</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="nf">.df</span><span class="p">(</span><span class="n">m</span><span class="o">$</span><span class="n">info</span><span class="o">$</span><span class="n">groups</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_fleets"><code>ewe_fleets</code><a class="headerlink" href="#ewe_fleets" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_fleets</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="nf">.df</span><span class="p">(</span><span class="n">m</span><span class="o">$</span><span class="n">info</span><span class="o">$</span><span class="n">fleets</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_scenarios"><code>ewe_scenarios</code><a class="headerlink" href="#ewe_scenarios" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_scenarios</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="nf">.df</span><span class="p">(</span><span class="n">m</span><span class="o">$</span><span class="n">info</span><span class="o">$</span><span class="n">scenarios</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_ecopath_inputs"><code>ewe_ecopath_inputs</code><a class="headerlink" href="#ewe_ecopath_inputs" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_ecopath_inputs</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</code></pre></div>
+<p>Ecopath inputs: groups, diet (long) and catch by fleet</p>
+<h3 id="ewe_ecopath"><code>ewe_ecopath</code><a class="headerlink" href="#ewe_ecopath" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_ecopath</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</code></pre></div>
+<p>Run Ecopath</p>
+<p><strong>Returns:</strong> A list: <code>balanced</code>, <code>unbalanced_groups</code>, <code>groups</code> (one row per group).</p>
+<h3 id="ewe_ecosim"><code>ewe_ecosim</code><a class="headerlink" href="#ewe_ecosim" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_ecosim</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">effort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">vulnerability_multiplier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">fleets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<p>Run an Ecosim scenario</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scenario</code></td>
+<td>1-based index or name; defaults to the first scenario.</td>
+</tr>
+<tr>
+<td><code>years</code></td>
+<td>Override the number of years.</td>
+</tr>
+<tr>
+<td><code>effort</code></td>
+<td>Named numeric: fleet name -&gt; multiplier on that fleet's whole effort series.</td>
+</tr>
+<tr>
+<td><code>vulnerability_multiplier</code></td>
+<td>Scale every predator-prey vulnerability.</td>
+</tr>
+<tr>
+<td><code>fleets</code></td>
+<td>Include the catch-by-fleet table.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A list: <code>scenario</code>, <code>years</code>, <code>groups</code> and <code>fleets</code> (long, monthly), <code>summary</code>, <code>messages</code> (warnings from the run).</p>
+<h3 id="ewe_wide"><code>ewe_wide</code><a class="headerlink" href="#ewe_wide" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_wide</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"biomass"</span><span class="p">)</span>
+</code></pre></div>
+<p>Time x group table of one Ecosim variable</p>
+<h2 id="building-and-editing-models">Building and editing models<a class="headerlink" href="#building-and-editing-models" title="Permanent link">&para;</a></h2>
+<h3 id="ewe_new_model"><code>ewe_new_model</code><a class="headerlink" href="#ewe_new_model" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_new_model</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"New model"</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+</code></pre></div>
+<p>Start a new, empty EwE model</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Model name.</td>
+</tr>
+<tr>
+<td><code>...</code></td>
+<td>Other model fields, e.g. <code>area</code>, <code>first_year</code>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> An <code>ewe_document</code>. Add groups with <code>ewe_add_group()</code>, then <code>ewe_save_model()</code> or <code>ewe_open_document()</code>.</p>
+<h3 id="ewe_document"><code>ewe_document</code><a class="headerlink" href="#ewe_document" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_document</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</code></pre></div>
+<p>The model document of an open model Edit it, then run the edit with <code>ewe_apply()</code> or write it with <code>ewe_save()</code>. The document remembers the model's file, so saving it elsewhere keeps the model's Ecosim, Ecospace and Ecotracer data.</p>
+<h3 id="ewe_read_document"><code>ewe_read_document</code><a class="headerlink" href="#ewe_read_document" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_read_document</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"template"</span><span class="p">)</span>
+</code></pre></div>
+<p>Read or write a model document as JSON</p>
+<h3 id="ewe_write_document"><code>ewe_write_document</code><a class="headerlink" href="#ewe_write_document" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_write_document</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_doc_table"><code>ewe_doc_table</code><a class="headerlink" href="#ewe_doc_table" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_doc_table</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"groups"</span><span class="p">)</span>
+</code></pre></div>
+<p>A table of a model document as a data.frame</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>table</code></td>
+<td>One of "groups", "diet", "detritus_fate", "fleets", "catch", "discard_fate", "ecosim_scenarios".</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_diet_matrix"><code>ewe_diet_matrix</code><a class="headerlink" href="#ewe_diet_matrix" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_diet_matrix</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</code></pre></div>
+<p>Prey x predator diet matrix of a model document</p>
+<h3 id="ewe_set_model"><code>ewe_set_model</code><a class="headerlink" href="#ewe_set_model" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_set_model</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+</code></pre></div>
+<p>Set model metadata (name, area, first_year, ...)</p>
+<h3 id="ewe_add_group"><code>ewe_add_group</code><a class="headerlink" href="#ewe_add_group" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_add_group</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"consumer"</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">,</span><span class="w"> </span><span class="n">before</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">detritus_fate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Add a functional group</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Unique group name.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>"consumer", "producer", "detritus", or a number between 0 and 1 for a partial producer.</td>
+</tr>
+<tr>
+<td><code>...</code></td>
+<td>Group fields, e.g. <code>biomass_area = 2, pb = 0.8, qb = 4</code>. NA means "not entered".</td>
+</tr>
+<tr>
+<td><code>before</code></td>
+<td>Insert before this group. By default living groups go after the last living group and detritus at the end (Ecopath needs living groups first).</td>
+</tr>
+<tr>
+<td><code>detritus_fate</code></td>
+<td>Named numeric, detritus group -&gt; proportion. By default everything goes to the first detritus group; living groups added before any detritus group get that default when the first detritus group is added.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_set_group"><code>ewe_set_group</code><a class="headerlink" href="#ewe_set_group" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_set_group</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+</code></pre></div>
+<p>Set group fields, e.g. <code>ewe_set_group(doc, "Pinfish", pb = 2.5, ee = NA)</code></p>
+<h3 id="ewe_update_groups"><code>ewe_update_groups</code><a class="headerlink" href="#ewe_update_groups" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_update_groups</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">table</span><span class="p">)</span>
+</code></pre></div>
+<p>Set group fields from a data.frame with a <code>name</code> column</p>
+<h3 id="ewe_rename_group"><code>ewe_rename_group</code><a class="headerlink" href="#ewe_rename_group" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_rename_group</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">old</span><span class="p">,</span><span class="w"> </span><span class="n">new</span><span class="p">)</span>
+</code></pre></div>
+<p>Rename a group everywhere it is referenced (it keeps its Ecosim/Ecospace data)</p>
+<h3 id="ewe_remove_group"><code>ewe_remove_group</code><a class="headerlink" href="#ewe_remove_group" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_remove_group</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+<p>Remove a group with every diet link, fate, catch and life stage that refers to it On save, its Ecosim/Ecospace/Ecotracer data is removed as well.</p>
+<h3 id="ewe_set_diet"><code>ewe_set_diet</code><a class="headerlink" href="#ewe_set_diet" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_set_diet</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">predator</span><span class="p">,</span><span class="w"> </span><span class="n">diet</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<p>Set a predator's diet</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>diet</code></td>
+<td>Named numeric: prey -&gt; proportion.</td>
+</tr>
+<tr>
+<td><code>replace</code></td>
+<td>If FALSE, only the prey given change.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_set_diet_matrix"><code>ewe_set_diet_matrix</code><a class="headerlink" href="#ewe_set_diet_matrix" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_set_diet_matrix</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">matrix</span><span class="p">)</span>
+</code></pre></div>
+<p>Set predators' diets from a prey x predator matrix (as returned by <code>ewe_diet_matrix()</code>)</p>
+<h3 id="ewe_set_detritus_fate"><code>ewe_set_detritus_fate</code><a class="headerlink" href="#ewe_set_detritus_fate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_set_detritus_fate</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="p">,</span><span class="w"> </span><span class="n">fate</span><span class="p">)</span>
+</code></pre></div>
+<p>Where a group's flow to detritus goes (named numeric: detritus group -&gt; proportion)</p>
+<h3 id="ewe_add_fleet"><code>ewe_add_fleet</code><a class="headerlink" href="#ewe_add_fleet" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_add_fleet</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">,</span><span class="w"> </span><span class="n">discard_fate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Add a fleet (discards go to the first detritus group unless <code>discard_fate</code> says otherwise)</p>
+<h3 id="ewe_set_fleet"><code>ewe_set_fleet</code><a class="headerlink" href="#ewe_set_fleet" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_set_fleet</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_rename_fleet"><code>ewe_rename_fleet</code><a class="headerlink" href="#ewe_rename_fleet" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_rename_fleet</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">old</span><span class="p">,</span><span class="w"> </span><span class="n">new</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_remove_fleet"><code>ewe_remove_fleet</code><a class="headerlink" href="#ewe_remove_fleet" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_remove_fleet</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_set_catch"><code>ewe_set_catch</code><a class="headerlink" href="#ewe_set_catch" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_set_catch</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">fleet</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="p">,</span><span class="w"> </span><span class="n">landings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">discards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">discard_mortality</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Set one fleet's landings, discards, price or discard mortality for a group Arguments left NULL keep their value. A row with no landings and no discards is dropped.</p>
+<h3 id="ewe_set_catch_table"><code>ewe_set_catch_table</code><a class="headerlink" href="#ewe_set_catch_table" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_set_catch_table</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">table</span><span class="p">)</span>
+</code></pre></div>
+<p>Set catch from a long data.frame (fleet, group, and any of landings, discards, price, discard_mortality)</p>
+<h3 id="ewe_set_discard_fate"><code>ewe_set_discard_fate</code><a class="headerlink" href="#ewe_set_discard_fate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_set_discard_fate</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">fleet</span><span class="p">,</span><span class="w"> </span><span class="n">fate</span><span class="p">)</span>
+</code></pre></div>
+<p>Where a fleet's discards go (named numeric: detritus group -&gt; proportion)</p>
+<h3 id="ewe_add_stanza"><code>ewe_add_stanza</code><a class="headerlink" href="#ewe_add_stanza" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_add_stanza</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">life_stages</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+</code></pre></div>
+<p>Add a multi-stanza group</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>life_stages</code></td>
+<td>data.frame with columns group, age_start (months), mortality and optionally spawn_prop, youngest first. The groups must exist.</td>
+</tr>
+<tr>
+<td><code>...</code></td>
+<td>rec_power, bab_split, wmat_winf, leading_stage, ...</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_remove_stanza"><code>ewe_remove_stanza</code><a class="headerlink" href="#ewe_remove_stanza" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_remove_stanza</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_calculate_stanzas"><code>ewe_calculate_stanzas</code><a class="headerlink" href="#ewe_calculate_stanzas" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_calculate_stanzas</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">apply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<p>Run EwE's multi-stanza calculation As the desktop app does when stanza parameters change: from the leading stage's B and Q/B, each stage's Z (<code>mortality</code>), von Bertalanffy K (<code>vbk</code>) and <code>wmat_winf</code>, derives B of every other stage and Q/B of every stage but the leading Q/B stage (those may be NA before the call).</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>apply</code></td>
+<td>Write the results into the document's groups.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <code>list(doc, stages)</code>: the (updated) document and one row per life stage.</p>
+<h3 id="ewe_add_ecosim_scenario"><code>ewe_add_ecosim_scenario</code><a class="headerlink" href="#ewe_add_ecosim_scenario" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_add_ecosim_scenario</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+</code></pre></div>
+<p>Add or remove an Ecosim scenario A new scenario starts from EwE's defaults (vulnerabilities 2, constant effort).</p>
+<h3 id="ewe_remove_ecosim_scenario"><code>ewe_remove_ecosim_scenario</code><a class="headerlink" href="#ewe_remove_ecosim_scenario" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_remove_ecosim_scenario</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_set_effort"><code>ewe_set_effort</code><a class="headerlink" href="#ewe_set_effort" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_set_effort</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="p">,</span><span class="w"> </span><span class="n">fleet</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="n">interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"year"</span><span class="p">,</span><span class="w"> </span><span class="s">"month"</span><span class="p">))</span>
+</code></pre></div>
+<p>Set a fleet's fishing effort over time in an Ecosim scenario Replaces the fleet's stored effort series on save; fleets you don't set keep theirs.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>values</code></td>
+<td>Effort relative to the Ecopath (base) effort, one value per year from the model's first year (or per month with <code>interval = "month"</code>). The last value holds to the end of the run.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_set_vulnerabilities"><code>ewe_set_vulnerabilities</code><a class="headerlink" href="#ewe_set_vulnerabilities" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_set_vulnerabilities</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="p">,</span><span class="w"> </span><span class="n">vulnerabilities</span><span class="p">)</span>
+</code></pre></div>
+<p>Set predator-prey vulnerabilities in an Ecosim scenario 1 is donor control, 2 EwE's default, larger values top-down control. Links you don't set keep their stored value.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vulnerabilities</code></td>
+<td>A data.frame with predator, prey and vulnerability columns, or one number for every diet link.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_add_time_series"><code>ewe_add_time_series</code><a class="headerlink" href="#ewe_add_time_series" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_add_time_series</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">dataset</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">fleet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">cv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">first_year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Add an annual time series to a dataset (created if needed) On save, a dataset in the document replaces the model's dataset of the same name; others stay.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>One of "biomass_relative", "biomass_absolute", "catches", "fishing_effort" (per fleet), "fishing_mortality", "total_mortality", "landings" and "discards" (per fleet and group), ... <code>biomass_relative</code> and <code>catches</code> are the usual reference data for <code>ewe_fit()</code>.</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td>One value per year from the dataset's first year; NA where there is no observation.</td>
+</tr>
+<tr>
+<td><code>first_year</code></td>
+<td>The dataset's first year; defaults to the model's <code>first_year</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_remove_time_series"><code>ewe_remove_time_series</code><a class="headerlink" href="#ewe_remove_time_series" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_remove_time_series</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">dataset</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>For <code>ewe_remove_time_series()</code>: the series to drop, or NULL for the whole dataset. Only the document changes; datasets already saved in the model are not touched.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_validate"><code>ewe_validate</code><a class="headerlink" href="#ewe_validate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_validate</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</code></pre></div>
+<p>Check a model document</p>
+<p><strong>Returns:</strong> A list: <code>valid</code>, <code>errors</code> and <code>warnings</code> (data.frames of path and message). Errors block saving; warnings do not.</p>
+<h3 id="ewe_save_model"><code>ewe_save_model</code><a class="headerlink" href="#ewe_save_model" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_save_model</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Save a model document as .eiixml, or as an EwE Access database for a .ewemdb/.mdb path</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>base</code></td>
+<td>The .eiixml file whose other data (Ecosim etc.) the save builds on; defaults to the file the document came from, or "template" for a new model.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> The path written. Signals an <code>ewe_validation_error</code> if the document is invalid.</p>
+<h3 id="ewe_open_document"><code>ewe_open_document</code><a class="headerlink" href="#ewe_open_document" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_open_document</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Load a model document in a new engine session without saving it</p>
+<h3 id="ewe_apply"><code>ewe_apply</code><a class="headerlink" href="#ewe_apply" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_apply</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">doc</span><span class="p">)</span>
+</code></pre></div>
+<p>Run an edited model Loads <code>doc</code> into the open model's session in place of the current model, on top of its other data. Nothing is written to the original file; use <code>ewe_save()</code> for that.</p>
+<p><strong>Returns:</strong> The validation warnings (data.frame), invisibly.</p>
+<h3 id="ewe_save"><code>ewe_save</code><a class="headerlink" href="#ewe_save" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_save</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">reopen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<p>Save an open model (its current state, or <code>doc</code> applied on top of it) To .eiixml the session continues on the saved file (unless <code>reopen = FALSE</code>); a .ewemdb/.mdb path writes an EwE Access database through ewe-access.</p>
+<h3 id="ewe_model_schema"><code>ewe_model_schema</code><a class="headerlink" href="#ewe_model_schema" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_model_schema</span><span class="p">()</span>
+</code></pre></div>
+<p>JSON Schema of model documents</p>
+<h2 id="time-series-fitting-monte-carlo-ecospace-ecotracer">Time series, fitting, Monte Carlo, Ecospace, Ecotracer<a class="headerlink" href="#time-series-fitting-monte-carlo-ecospace-ecotracer" title="Permanent link">&para;</a></h2>
+<h3 id="ewe_time_series"><code>ewe_time_series</code><a class="headerlink" href="#ewe_time_series" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_time_series</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">dataset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Time series datasets</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dataset</code></td>
+<td>1-based index or name. Omit to only list the datasets.</td>
+</tr>
+<tr>
+<td><code>scenario</code></td>
+<td>Ecosim scenario; defaults to the first.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A list: <code>datasets</code>, and with <code>dataset</code> also <code>series</code> (long table) and <code>messages</code>.</p>
+<h3 id="ewe_fit"><code>ewe_fit</code><a class="headerlink" href="#ewe_fit" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_fit</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">dataset</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">vulnerabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">anomaly_spline_points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0L</span><span class="p">,</span><span class="w"> </span><span class="n">anomaly_shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">reset_vulnerabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">max_iterations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Fit Ecosim to a time series dataset Runs EwE's "Fit to time series" search. Nothing is stored in the model; keep the result with <code>ewe_fit_save()</code> or <code>ewe_fit_apply()</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dataset</code></td>
+<td>Time series dataset, 1-based index or name.</td>
+</tr>
+<tr>
+<td><code>vulnerabilities</code></td>
+<td>Search vulnerabilities, one block per predator with reference data.</td>
+</tr>
+<tr>
+<td><code>anomaly_spline_points</code></td>
+<td>Also search a primary production anomaly with this many spline points (1 = one value per year).</td>
+</tr>
+<tr>
+<td><code>anomaly_shape</code></td>
+<td>Forcing function (1-based index or title) to hold the anomaly. By default a new one titled "PP anomaly (fit)", or the existing one with that title. It is applied to the production rate of every producer.</td>
+</tr>
+<tr>
+<td><code>reset_vulnerabilities</code></td>
+<td>Start from EwE's default vulnerability (2), like the desktop app's "Use default v" option. Off by default, so the search refines the scenario's own vulnerabilities. The result keeps the best parameters the search tried, and <code>messages</code> warns when the fit still scores worse than the scenario as stored.</td>
+</tr>
+<tr>
+<td><code>max_iterations</code></td>
+<td>Stop the search early.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A list: <code>ss_before</code>, <code>ss_after</code> (with the fitted values, as the scenario runs once saved), <code>aic</code>, <code>iterations</code>, <code>vulnerabilities</code> (before/after per link) and, with an anomaly search, <code>anomaly_shape</code> and <code>anomaly</code> (month, year, value).</p>
+<h3 id="ewe_fit_save"><code>ewe_fit_save</code><a class="headerlink" href="#ewe_fit_save" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_fit_save</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">fit</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">reopen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">only_changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+<p>Keep a fit: save it with the model, or load it into the session <code>ewe_fit_save()</code> writes the model as .eiixml with the fitted vulnerabilities and anomaly stored in the fit's scenario, where the EwE desktop app keeps them. The anomaly is a forcing function applied to the production rate of every producer; forcing functions are shared by all scenarios of a model. The session continues on the saved file unless <code>reopen = FALSE</code>. <code>ewe_fit_apply()</code> loads the fitted values into the session so later runs use them, without writing the original file.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fit</code></td>
+<td>The result of <code>ewe_fit()</code>.</td>
+</tr>
+<tr>
+<td><code>only_changed</code></td>
+<td>Write only the links the search changed (by default all links, since <code>reset_vulnerabilities</code> also changes links outside the searched blocks).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <code>ewe_fit_save()</code>: the path written, invisibly. <code>ewe_fit_apply()</code>: a list with <code>vulnerabilities_written</code> and <code>anomaly_shape</code>, invisibly.</p>
+<h3 id="ewe_fit_apply"><code>ewe_fit_apply</code><a class="headerlink" href="#ewe_fit_apply" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_fit_apply</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">fit</span><span class="p">,</span><span class="w"> </span><span class="n">only_changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_monte_carlo"><code>ewe_monte_carlo</code><a class="headerlink" href="#ewe_monte_carlo" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_monte_carlo</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">trials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10L</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">dataset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Ecosim Monte Carlo Resamples Ecopath inputs within their CVs, rebalances, and runs Ecosim for each trial.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>trials</code></td>
+<td>Number of trials.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td>Random seed, for repeatable trials.</td>
+</tr>
+<tr>
+<td><code>years</code></td>
+<td>Override the scenario length.</td>
+</tr>
+<tr>
+<td><code>dataset</code></td>
+<td>Time series dataset to score each trial against.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A list: <code>trials</code> (sum of squares), <code>inputs</code> (sampled Ecopath inputs) and <code>biomass</code> (start/end per trial and group).</p>
+<h3 id="ewe_ecotracer"><code>ewe_ecotracer</code><a class="headerlink" href="#ewe_ecotracer" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_ecotracer</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">tracer_scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Run Ecosim with contaminant tracing (Ecotracer)</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tracer_scenario</code></td>
+<td>Ecotracer scenario, 1-based index or name; defaults to the first.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A list with <code>concentrations</code>: step, time, group, concentration, concentration_per_biomass. The group "(environment)" is the concentration in the environment.</p>
+<h3 id="ewe_ecospace"><code>ewe_ecospace</code><a class="headerlink" href="#ewe_ecospace" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_ecospace</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">space_scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<p>Run an Ecospace scenario</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>space_scenario</code></td>
+<td>Ecospace scenario, 1-based index or name; defaults to the first.</td>
+</tr>
+<tr>
+<td><code>scenario</code></td>
+<td>Ecosim scenario it runs on; defaults to the first.</td>
+</tr>
+<tr>
+<td><code>years</code></td>
+<td>Override the run length.</td>
+</tr>
+<tr>
+<td><code>maps</code></td>
+<td>Return the final biomass map of every group.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A list: <code>groups</code> (totals over the map per step), <code>biomass_maps</code> (named list of rows x cols matrices, NA on land), grid size and <code>messages</code>.</p>
+<h2 id="management">Management<a class="headerlink" href="#management" title="Permanent link">&para;</a></h2>
+<h3 id="ewe_mse"><code>ewe_mse</code><a class="headerlink" href="#ewe_mse" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_mse</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">trials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10L</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">fleets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">trial_values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+<p>Management Strategy Evaluation Runs EwE's closed-loop MSE: stochastic trials of assessment, harvest rules and Ecosim.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>trials</code></td>
+<td>Number of trials.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td>Random seed, for repeatable trials.</td>
+</tr>
+<tr>
+<td><code>years</code></td>
+<td>Override the scenario length.</td>
+</tr>
+<tr>
+<td><code>parameters</code></td>
+<td>Named list of MSE parameters, e.g. <code>list(regulatory_mode = "NoRegulations")</code>.</td>
+</tr>
+<tr>
+<td><code>groups</code></td>
+<td>Named list: group name (or index) to MSE group settings, e.g. <code>list(Cod = list(fixed_f = 0.2))</code>.</td>
+</tr>
+<tr>
+<td><code>fleets</code></td>
+<td>Named list: fleet name (or index) to MSE fleet settings, e.g. <code>list(Trawlers = list(quota_type = "Weakest"))</code>.</td>
+</tr>
+<tr>
+<td><code>trial_values</code></td>
+<td>Also return every trial's yearly values.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A list: <code>groups</code> and <code>fleets</code> (summary statistics), <code>value</code>, <code>yearly</code> (year, variable, name, mean, q05, q50, q95), the settings used, and <code>trial_values</code> when asked.</p>
+<h3 id="ewe_msy"><code>ewe_msy</code><a class="headerlink" href="#ewe_msy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_msy</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"group"</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">max_rel_f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">steps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">trial_years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">to_depletion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+<p>Equilibrium yield curves (MSY) Varies the F of one group (or the effort of one or all fleets) and runs Ecosim to equilibrium at each step, under full compensation and a stationary system.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target</code></td>
+<td>Group (group mode) or fleet (fleet mode; <code>NULL</code> for all fleets), by name or index.</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td><code>"group"</code> or <code>"fleet"</code>.</td>
+</tr>
+<tr>
+<td><code>max_rel_f</code></td>
+<td>Highest F as a multiple of the target's base F (group mode), or highest effort multiplier.</td>
+</tr>
+<tr>
+<td><code>steps</code></td>
+<td>Number of equal F steps between 0 and the highest F.</td>
+</tr>
+<tr>
+<td><code>trial_years</code></td>
+<td>Years Ecosim runs at each F.</td>
+</tr>
+<tr>
+<td><code>to_depletion</code></td>
+<td>Keep raising F until the catch is depleted.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A list: <code>curve</code> (assessment, f, total_value, group, biomass, catch, fishing_mortality), <code>optimum</code> and <code>baseline</code>.</p>
+<h3 id="ewe_fmsy"><code>ewe_fmsy</code><a class="headerlink" href="#ewe_fmsy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_fmsy</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">max_rel_f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">steps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">trial_years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>FMSY of every fished group EwE's "Find FMSY": an MSY search per fished group, then all groups fished at their FMSY at once.</p>
+<p><strong>Returns:</strong> A list with <code>groups</code>: assessment, group, f_base, fmsy, found, catch_base, msy, value_base, ...</p>
+<h3 id="ewe_policy_search"><code>ewe_policy_search</code><a class="headerlink" href="#ewe_policy_search" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_policy_search</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">fleets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">max_evaluations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Fishing policy search Searches fleet effort multipliers that maximise a weighted objective (net economic value, social, mandated rebuilding, ecosystem structure, biodiversity).</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>weights</code></td>
+<td>Named list of objective weights, e.g. <code>list(economic_weight = 1, ecosystem_weight = 0.5)</code>.</td>
+</tr>
+<tr>
+<td><code>parameters</code></td>
+<td>Named list of search parameters, e.g. <code>n_runs</code>, <code>init_option</code>, <code>discount_rate</code>.</td>
+</tr>
+<tr>
+<td><code>groups,fleets</code></td>
+<td>Named lists of per-group / per-fleet objective settings.</td>
+</tr>
+<tr>
+<td><code>blocks</code></td>
+<td>Named list: fleet to one block code for all years, or one code per year. Fleets sharing a code share one multiplier; 0 leaves a fleet out.</td>
+</tr>
+<tr>
+<td><code>max_evaluations</code></td>
+<td>Cap on objective evaluations.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A list: <code>result</code> (objective and its parts), <code>blocks</code> and <code>effort</code> (multipliers found), <code>fleets</code>, <code>progress</code>, and the settings used.</p>
+<h3 id="ewe_mse_wide"><code>ewe_mse_wide</code><a class="headerlink" href="#ewe_mse_wide" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_mse_wide</span><span class="p">(</span><span class="n">mse</span><span class="p">,</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"biomass"</span><span class="p">,</span><span class="w"> </span><span class="n">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"mean"</span><span class="p">)</span>
+</code></pre></div>
+<p>One column per group (or fleet) of a yearly MSE statistic</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mse</code></td>
+<td>The result of <code>ewe_mse()</code>.</td>
+</tr>
+<tr>
+<td><code>variable</code></td>
+<td>One of the <code>yearly</code> variables: biomass, catch, fleet_catch, effort, value.</td>
+</tr>
+<tr>
+<td><code>stat</code></td>
+<td>mean, q05, q50 or q95.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A data.frame: year and one column per name.</p>
+<h3 id="ewe_yield_curve"><code>ewe_yield_curve</code><a class="headerlink" href="#ewe_yield_curve" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_yield_curve</span><span class="p">(</span><span class="n">msy</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">assessment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"full_compensation"</span><span class="p">)</span>
+</code></pre></div>
+<p>Yield curve of one group from an MSY run</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>msy</code></td>
+<td>The result of <code>ewe_msy()</code>.</td>
+</tr>
+<tr>
+<td><code>group</code></td>
+<td>Group; the MSY target by default.</td>
+</tr>
+<tr>
+<td><code>assessment</code></td>
+<td>"full_compensation" or "stationary_system".</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> F against equilibrium biomass, catch and total value.</p>
+<h2 id="network-analysis-and-indicators">Network analysis and indicators<a class="headerlink" href="#network-analysis-and-indicators" title="Permanent link">&para;</a></h2>
+<h3 id="ewe_network_analysis"><code>ewe_network_analysis</code><a class="headerlink" href="#ewe_network_analysis" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_network_analysis</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</code></pre></div>
+<p>Network analysis of the Ecopath model</p>
+<p><strong>Returns:</strong> A list of data frames: <code>summary</code> (indicator, value, unit: throughput, cycling, path lengths, ascendency, transfer efficiencies, primary production), <code>ascendency</code> (by source), <code>groups</code> (trophic level, ascendency terms, keystoneness, primary production required, L index, Psust), <code>trophic_levels</code>, <code>decomposition</code> (trophic level decomposition) and <code>mixed_trophic_impacts</code> (impacting, impacted, impact).</p>
+<h3 id="ewe_mti_matrix"><code>ewe_mti_matrix</code><a class="headerlink" href="#ewe_mti_matrix" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_mti_matrix</span><span class="p">(</span><span class="n">na</span><span class="p">)</span>
+</code></pre></div>
+<p>Mixed trophic impacts as a matrix</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>na</code></td>
+<td>The result of <code>ewe_network_analysis</code>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A matrix where rows impact columns; fleets follow the groups.</p>
+<h3 id="ewe_ecosim_network_analysis"><code>ewe_ecosim_network_analysis</code><a class="headerlink" href="#ewe_ecosim_network_analysis" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_ecosim_network_analysis</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">ppr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+<p>Network analysis at every Ecosim time step</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scenario</code></td>
+<td>Ecosim scenario; defaults to the first.</td>
+</tr>
+<tr>
+<td><code>years</code></td>
+<td>Override the scenario length.</td>
+</tr>
+<tr>
+<td><code>ppr</code></td>
+<td>Also estimate primary production required, L index and Psust every time step (slower).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A list with <code>indices</code>: one row per time step (step, time, throughput, capacity, ascendency terms, cycling indices, FIB, TL of the catch, transfer efficiencies, ...).</p>
+<h3 id="ewe_indicators"><code>ewe_indicators</code><a class="headerlink" href="#ewe_indicators" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_indicators</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">ecosim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">scenario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Ecological indicators Biomass, catch, trophic, species and size based indicators. Species and size based indicators need taxonomy data in the model and are 0 without it.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ecosim</code></td>
+<td>Also run Ecosim and compute the indicators at every time step.</td>
+</tr>
+<tr>
+<td><code>scenario</code></td>
+<td>Ecosim scenario; defaults to the first.</td>
+</tr>
+<tr>
+<td><code>years</code></td>
+<td>Override the scenario length.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A list: <code>catalog</code> (indicator code, category, name, description, units), <code>ecopath</code> (indicator, category, value) and with <code>ecosim = TRUE</code> also <code>ecosim</code> (one row per time step, one column per indicator code).</p>
+<h2 id="plotting">Plotting<a class="headerlink" href="#plotting" title="Permanent link">&para;</a></h2>
+<h3 id="ewe_plot_theme"><code>ewe_plot_theme</code><a class="headerlink" href="#ewe_plot_theme" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_theme</span><span class="p">(</span><span class="n">theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Colours used by the ewe_plot_* functions</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>theme</code></td>
+<td>"light" (default) or "dark". Setting it changes every chart drawn after the call.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> Invisibly, the palette: <code>series</code> (eight colours in their fixed order), surfaces and inks.</p>
+<h3 id="ewe_ggtheme"><code>ewe_ggtheme</code><a class="headerlink" href="#ewe_ggtheme" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_ggtheme</span><span class="p">()</span>
+</code></pre></div>
+<p>ggplot2 theme of the ewe_plot_* charts</p>
+<h3 id="ewe_plot_ecosim"><code>ewe_plot_ecosim</code><a class="headerlink" href="#ewe_plot_ecosim" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_ecosim</span><span class="p">(</span><span class="n">sim</span><span class="p">,</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"biomass"</span><span class="p">,</span><span class="w"> </span><span class="n">relative</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">annual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">facet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot Ecosim output over time One line per group, or small multiples past eight groups.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sim</code></td>
+<td>Result of <code>ewe_ecosim()</code>.</td>
+</tr>
+<tr>
+<td><code>variable</code></td>
+<td>Column of <code>sim$groups</code>: biomass, catch, f, z, m2, qb, tl or value.</td>
+</tr>
+<tr>
+<td><code>relative</code></td>
+<td>Divide by the first value, so every line starts at 1.</td>
+</tr>
+<tr>
+<td><code>groups</code></td>
+<td>Groups to show (all by default).</td>
+</tr>
+<tr>
+<td><code>annual</code></td>
+<td>Yearly means of the monthly output.</td>
+</tr>
+<tr>
+<td><code>facet</code></td>
+<td>Force small multiples (TRUE) or one panel (FALSE).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> A ggplot.</p>
+<h3 id="ewe_plot_compare"><code>ewe_plot_compare</code><a class="headerlink" href="#ewe_plot_compare" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_compare</span><span class="p">(</span><span class="n">runs</span><span class="p">,</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"biomass"</span><span class="p">,</span><span class="w"> </span><span class="n">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">relative</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">annual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Compare several Ecosim runs: one panel per group, one line per run</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>runs</code></td>
+<td>Named list of <code>ewe_ecosim()</code> results, e.g. <code>list(baseline = a, "seiners x2" = b)</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_fleets"><code>ewe_plot_fleets</code><a class="headerlink" href="#ewe_plot_fleets" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_fleets</span><span class="p">(</span><span class="n">sim</span><span class="p">,</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"landings"</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"fleet"</span><span class="p">,</span><span class="w"> </span><span class="n">annual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot catch, landings or value by fleet (or by group), stacked Past eight fleets the smallest are summed into "Other".</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>variable</code></td>
+<td>Column of <code>sim$fleets</code>: catch, landings or value.</td>
+</tr>
+<tr>
+<td><code>by</code></td>
+<td>"fleet" or "group".</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_fit"><code>ewe_plot_fit</code><a class="headerlink" href="#ewe_plot_fit" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_fit</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span><span class="w"> </span><span class="n">predicted</span><span class="p">,</span><span class="w"> </span><span class="n">series</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">first_year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot observed time series against Ecosim's prediction One panel per series. Relative indices are scaled to the prediction the way EwE scores them (the geometric mean of predicted / observed), using the first run. Ecosim years are put on the dataset's calendar: the scenario's first year becomes the dataset's first year, unless <code>first_year</code> says otherwise.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ts</code></td>
+<td>Result of <code>ewe_time_series(m, dataset)</code>.</td>
+</tr>
+<tr>
+<td><code>predicted</code></td>
+<td>One <code>ewe_ecosim()</code> result, or a named list of them (e.g. before and after a fit).</td>
+</tr>
+<tr>
+<td><code>series</code></td>
+<td>Series or group names to show (all biomass and catch series by default).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_time_series"><code>ewe_plot_time_series</code><a class="headerlink" href="#ewe_plot_time_series" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_time_series</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span><span class="w"> </span><span class="n">series</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot the dataset's observed series, one panel each (forcing series like effort included)</p>
+<h3 id="ewe_plot_fit_iterations"><code>ewe_plot_fit_iterations</code><a class="headerlink" href="#ewe_plot_fit_iterations" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_fit_iterations</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot the sum of squares at each iteration of a fit</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fit</code></td>
+<td>Result of <code>ewe_fit()</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_monte_carlo"><code>ewe_plot_monte_carlo</code><a class="headerlink" href="#ewe_plot_monte_carlo" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_monte_carlo</span><span class="p">(</span><span class="n">mc</span><span class="p">,</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"biomass_ratio"</span><span class="p">,</span><span class="w"> </span><span class="n">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot the spread of an end-of-run variable across Monte Carlo trials Every trial as a dot, the 5-95\% range as a bar and the median as a tick, one row per group.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mc</code></td>
+<td>Result of <code>ewe_monte_carlo()</code>.</td>
+</tr>
+<tr>
+<td><code>variable</code></td>
+<td>biomass_ratio (end / start, log scale), biomass_end or biomass_start.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_mse"><code>ewe_plot_mse</code><a class="headerlink" href="#ewe_plot_mse" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_mse</span><span class="p">(</span><span class="n">mse</span><span class="p">,</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"biomass"</span><span class="p">,</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot an MSE yearly statistic across trials: median line and 5-95\% band, one panel per group or fleet</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mse</code></td>
+<td>Result of <code>ewe_mse()</code>.</td>
+</tr>
+<tr>
+<td><code>variable</code></td>
+<td>biomass, catch, fleet_catch, effort or value.</td>
+</tr>
+<tr>
+<td><code>names</code></td>
+<td>Groups or fleets to show.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_msy"><code>ewe_plot_msy</code><a class="headerlink" href="#ewe_plot_msy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_msy</span><span class="p">(</span><span class="n">msy</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot an equilibrium yield curve: catch and biomass against F, in two panels sharing the F axis Both assessments are drawn (full compensation and stationary system), the highest catch of each is marked and the base F is the vertical line.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>msy</code></td>
+<td>Result of <code>ewe_msy()</code>.</td>
+</tr>
+<tr>
+<td><code>group</code></td>
+<td>Group to show; the target group by default.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_fmsy"><code>ewe_plot_fmsy</code><a class="headerlink" href="#ewe_plot_fmsy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_fmsy</span><span class="p">(</span><span class="n">fmsy</span><span class="p">,</span><span class="w"> </span><span class="n">assessment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"full_compensation"</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot base F against FMSY for every fished group</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fmsy</code></td>
+<td>Result of <code>ewe_fmsy()</code>.</td>
+</tr>
+<tr>
+<td><code>assessment</code></td>
+<td>"full_compensation" or "stationary_system".</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_ecospace"><code>ewe_plot_ecospace</code><a class="headerlink" href="#ewe_plot_ecospace" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_ecospace</span><span class="p">(</span><span class="n">sp</span><span class="p">,</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"biomass"</span><span class="p">,</span><span class="w"> </span><span class="n">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">facet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot Ecospace totals over the map through time</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sp</code></td>
+<td>Result of <code>ewe_ecospace()</code>.</td>
+</tr>
+<tr>
+<td><code>variable</code></td>
+<td>biomass, relative_biomass or catch.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_ecospace_map"><code>ewe_plot_ecospace_map</code><a class="headerlink" href="#ewe_plot_ecospace_map" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_ecospace_map</span><span class="p">(</span><span class="n">sp</span><span class="p">,</span><span class="w"> </span><span class="n">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">max_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16L</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot final Ecospace biomass maps One group on an absolute scale, or several as small multiples. Panels of several groups share one colour scale, so each map shows biomass relative to that group's maximum on the map. Land is gray.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sp</code></td>
+<td>Result of <code>ewe_ecospace(maps = TRUE)</code>.</td>
+</tr>
+<tr>
+<td><code>groups</code></td>
+<td>Groups to map; without it the <code>max_maps</code> groups with the most biomass.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_trophic_levels"><code>ewe_plot_trophic_levels</code><a class="headerlink" href="#ewe_plot_trophic_levels" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_trophic_levels</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot biomass against trophic level, one dot per living group (log biomass)</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>Result of <code>ewe_ecopath()</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_foodweb"><code>ewe_plot_foodweb</code><a class="headerlink" href="#ewe_plot_foodweb" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_foodweb</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">diet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">min_flow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot the Ecopath food web Groups placed by trophic level (y), circle area by biomass, links from prey to predator with width by consumption (predator Q x diet share, t/km2/year).</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>An <code>ewe_model</code> (Ecopath is run), or the result of <code>ewe_ecopath()</code> with <code>diet</code>.</td>
+</tr>
+<tr>
+<td><code>diet</code></td>
+<td>Long diet table, <code>ewe_ecopath_inputs(m)$diet</code>; not needed when <code>x</code> is a model.</td>
+</tr>
+<tr>
+<td><code>min_flow</code></td>
+<td>Hide links below this fraction of the largest flow.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_mti"><code>ewe_plot_mti</code><a class="headerlink" href="#ewe_plot_mti" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_mti</span><span class="p">(</span><span class="n">na</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot mixed trophic impacts: how a small increase of each row group (or fleet) changes each column group</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>na</code></td>
+<td>Result of <code>ewe_network_analysis()</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ewe_plot_ecotracer"><code>ewe_plot_ecotracer</code><a class="headerlink" href="#ewe_plot_ecotracer" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_plot_ecotracer</span><span class="p">(</span><span class="n">tracer</span><span class="p">,</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"concentration"</span><span class="p">,</span><span class="w"> </span><span class="n">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">facet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Plot Ecotracer concentrations over time</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tracer</code></td>
+<td>Result of <code>ewe_ecotracer()</code>.</td>
+</tr>
+<tr>
+<td><code>variable</code></td>
+<td>concentration or concentration_per_biomass.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="model-library">Model library<a class="headerlink" href="#model-library" title="Permanent link">&para;</a></h2>
+<h3 id="ewe_library_root"><code>ewe_library_root</code><a class="headerlink" href="#ewe_library_root" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_library_root</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="ewe_library_ids"><code>ewe_library_ids</code><a class="headerlink" href="#ewe_library_ids" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_library_ids</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="ewe_library_list"><code>ewe_library_list</code><a class="headerlink" href="#ewe_library_list" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_library_list</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="ewe_library_load"><code>ewe_library_load</code><a class="headerlink" href="#ewe_library_load" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_library_load</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_library_golden"><code>ewe_library_golden</code><a class="headerlink" href="#ewe_library_golden" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_library_golden</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ewe_annual"><code>ewe_annual</code><a class="headerlink" href="#ewe_annual" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_annual</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+</code></pre></div>
+<p>Last month of each simulated year, as stored in the golden files</p>
+<h2 id="access-files">Access files<a class="headerlink" href="#access-files" title="Permanent link">&para;</a></h2>
+<h3 id="ewe_find_access_tool"><code>ewe_find_access_tool</code><a class="headerlink" href="#ewe_find_access_tool" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_find_access_tool</span><span class="p">()</span>
+</code></pre></div>
+<p>Find ewe-access, which reads and writes EwE Access databases Search order: the EWE_ACCESS environment variable, then a build in the EwE source tree (Sources/EwEAccess/bin/<config>/net10.0).</p>
+<p><strong>Returns:</strong> Path to ewe-access.dll (or executable), or NULL when it is not available.</p>
+<h3 id="ewe_to_ewemdb"><code>ewe_to_ewemdb</code><a class="headerlink" href="#ewe_to_ewemdb" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_to_ewemdb</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">dst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sub</span><span class="p">(</span><span class="s">"\\.eiixml$"</span><span class="p">,</span><span class="w"> </span><span class="s">".ewemdb"</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">),</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+<p>Write an .eiixml model as an EwE Access database that EwE on Windows opens Built from EwE's own empty model database, so the schema matches what EwE expects.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>overwrite</code></td>
+<td>Replace <code>dst</code> if it already exists.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> The path written.</p>
+<h3 id="ewe_from_ewemdb"><code>ewe_from_ewemdb</code><a class="headerlink" href="#ewe_from_ewemdb" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_from_ewemdb</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">dst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sub</span><span class="p">(</span><span class="s">"\\.[^.]+$"</span><span class="p">,</span><span class="w"> </span><span class="s">".eiixml"</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">),</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+<p>Convert an EwE Access database (.ewemdb/.mdb) to .eiixml</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>overwrite</code></td>
+<td>Replace <code>dst</code> if it already exists (by default the .eiixml next to <code>src</code>, often the model the database was made from).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> The path written.</p>
+<h2 id="engine-bundle">Engine bundle<a class="headerlink" href="#engine-bundle" title="Permanent link">&para;</a></h2>
+<h3 id="ewe_install_engine"><code>ewe_install_engine</code><a class="headerlink" href="#ewe_install_engine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_install_engine</span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+</code></pre></div>
+<p>Install an engine bundle</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source</code></td>
+<td>An <code>ewe-bundle-&lt;platform&gt;</code> archive (.tar.gz or .zip), an unpacked bundle folder, or a URL to an archive. For a private GitHub release asset pass the API asset URL and a token in <code>headers</code>, e.g. <code>c(Authorization = paste("token", Sys.getenv("GITHUB_PAT")), Accept = "application/octet-stream")</code>.</td>
+</tr>
+<tr>
+<td><code>headers</code></td>
+<td>HTTP headers for a URL download.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> The bundle folder, invisibly.</p>
+<h3 id="ewe_bundle_dir"><code>ewe_bundle_dir</code><a class="headerlink" href="#ewe_bundle_dir" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_bundle_dir</span><span class="p">()</span>
+</code></pre></div>
+<p>Where the installed engine bundle lives <code>EWE_BUNDLE</code> if set, otherwise the package's user data folder.</p>
+<h2 id="engine">Engine<a class="headerlink" href="#engine" title="Permanent link">&para;</a></h2>
+<h3 id="ewe_find_engine"><code>ewe_find_engine</code><a class="headerlink" href="#ewe_find_engine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ewe_find_engine</span><span class="p">()</span>
+</code></pre></div>
+<p>Find the EwE engine Search order: the EWE_ENGINE environment variable, an installed bundle (`ewe_install_engine()`), then a build in the EwE source tree (Sources/EwEEngine/bin/<config>/net10.0) above the working directory or this package.</p>
+<p><strong>Returns:</strong> Path to ewe-engine.dll (or a self-contained ewe-engine executable).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      EwE is licensed under the EUPL-1.2 · Ecopath International Initiative
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

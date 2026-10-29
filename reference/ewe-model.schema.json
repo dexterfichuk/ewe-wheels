@@ -153,12 +153,16 @@
           },
           "pp": {
             "description": "0 consumer, 1 primary producer, between 0 and 1 partial producer, 2 detritus.",
-            "type": [
-              "number",
-              "null"
-            ],
-            "minimum": 0,
-            "maximum": 2
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              {
+                "const": 2
+              }
+            ]
           },
           "habitat_area": {
             "description": "Fraction of the model area the group occupies (0-1].",
@@ -314,7 +318,8 @@
           },
           "color": {
             "description": "Display colour as hex AARRGGBB.",
-            "type": "string"
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{1,8}$"
           },
           "id": {
             "type": "integer",
@@ -432,7 +437,8 @@
           },
           "color": {
             "description": "Display colour as hex AARRGGBB.",
-            "type": "string"
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{1,8}$"
           },
           "id": {
             "type": "integer",
@@ -600,18 +606,12 @@
               "properties": {
                 "age_start": {
                   "description": "Age (months) at which the stage starts.",
-                  "type": [
-                    "integer",
-                    "null"
-                  ],
+                  "type": "integer",
                   "minimum": 0
                 },
                 "mortality": {
                   "description": "Total mortality Z (/year) of the stage, used by the stanza calculation; keep the group\u0027s pb equal to it.",
-                  "type": [
-                    "number",
-                    "null"
-                  ],
+                  "type": "number",
                   "minimum": 0
                 },
                 "spawn_prop": {
@@ -630,7 +630,9 @@
                 }
               },
               "required": [
-                "group"
+                "group",
+                "age_start",
+                "mortality"
               ],
               "additionalProperties": false
             },

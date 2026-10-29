@@ -1724,6 +1724,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ewe.modules.FitResult.anomaly_shape_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        anomaly_shape_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ewe.modules.FitResult.changed" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4046,6 +4057,17 @@
     <span class="md-ellipsis">
       
         read_schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ewe.convert.can_read_mdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        can_read_mdb
       
     </span>
   </a>
@@ -5782,6 +5804,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ewe.modules.FitResult.anomaly_shape_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        anomaly_shape_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ewe.modules.FitResult.changed" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8111,6 +8144,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ewe.convert.can_read_mdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        can_read_mdb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ewe.convert.eiixml_to_mdb" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8914,7 +8958,7 @@
     <div class="doc doc-contents first">
 
         <p>Load an EwE model (.eiixml, or an Access .ewemdb/.mdb), or a ModelDocument.</p>
-<p>Off Windows an Access database is converted to .eiixml first (with ewe-access, or mdbtools).</p>
+<p>An Access database is converted to .eiixml first (with ewe-access, or mdbtools), so it can be edited and saved.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9309,7 +9353,8 @@ Returns the validation warnings. Raises :class:<code>ModelValidationError</code>
 
         <p>Save the model: the current state, or <code>doc</code> applied on top of it.</p>
 <p><code>.eiixml</code> by default; a <code>.ewemdb</code>/<code>.mdb</code> path writes an EwE Access database (via ewe-access).</p>
-<p>With <code>reopen</code> (default) this session continues on the saved file.</p>
+<p>With <code>reopen</code> (default) this session continues on the saved .eiixml file. Saving to an Access
+database leaves the session as it was (the engine does not run on Access files).</p>
 
 
     </div>
@@ -11646,6 +11691,31 @@ scenarios of a model. With <code>reopen</code> (default) this session continues 
 
 
 
+<h3 id="ewe.modules.FitResult.anomaly_shape_id" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">anomaly_shape_id</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#ewe.modules.FitResult.anomaly_shape_id" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="n">anomaly_shape_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Id of that forcing function in the model when it already existed; pins it when the fit is saved.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
 <h3 id="ewe.modules.FitResult.changed" class="doc doc-heading">
             <span class="doc doc-object-name doc-attribute-name">changed</span>
 
@@ -13227,7 +13297,8 @@ fleet mode), total_value, group, biomass, catch, fishing_mortality at equilibriu
 
     <div class="doc doc-contents ">
 
-        <p>F against equilibrium biomass and catch of one group (the target group by default).</p>
+        <p>F against equilibrium biomass and catch of one group (the target group by default; in fleet
+mode <code>group</code> must be given).</p>
 
 
     </div>
@@ -15666,6 +15737,8 @@ means "not entered" (Ecopath estimates it).</p>
     <div class="doc doc-contents ">
 
         <p>Set group fields from a DataFrame with a <code>name</code> column (or group names as the index).</p>
+<p>NaN cells leave the field as it is (so <code>update_groups(doc.groups)</code> changes nothing); use
+:meth:<code>set_group</code> with <code>None</code> to mark a value as not entered.</p>
 
 
     </div>
@@ -16755,6 +16828,26 @@ from mdbtools (https://github.com/mdbtools/mdbtools) gives a model that loads on
 <div class="doc doc-object doc-function">
 
 
+<h3 id="ewe.convert.can_read_mdb" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">can_read_mdb</span>
+
+
+<a href="#ewe.convert.can_read_mdb" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">can_read_mdb</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Whether an Access database can be converted to .eiixml here (ewe-access or mdbtools present).</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="ewe.convert.eiixml_to_mdb" class="doc doc-heading">
             <span class="doc doc-object-name doc-function-name">eiixml_to_mdb</span>
 
@@ -16769,7 +16862,7 @@ from mdbtools (https://github.com/mdbtools/mdbtools) gives a model that loads on
 <p>Built from EwE's own empty model database, so the schema matches what EwE expects.
 Returns the output path.</p>
 <p><code>backend</code>: "ewe-access" (.NET, IKVM), "jpype" (Jackcess on a Java runtime, see
-:mod:<code>ewe.access_jpype</code>) or "auto" (ewe-access when available, else jpype).
+:mod:<code>ewe.access_jpype</code>) or "auto" (ewe-access when available, else jpype when it is set up).
 An existing <code>dst</code> is only replaced with <code>overwrite=True</code>.</p>
 
 
